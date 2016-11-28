@@ -22,10 +22,20 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
+    double CurrentPre = 0;
+    double poundCur = 0;
+    public void convert(View view) {
 
-    public void buttonClick(View view){
-        ImageView image = (ImageView) findViewById(R.id.imgView);
-        image.setImageResource(R.drawable.cat2);
+        EditText dollarAmountTextField = (EditText) findViewById(R.id.dollarAmt);
+
+        CurrentPre = Double.parseDouble(dollarAmountTextField.toString());
+
+        Double poundAmt = CurrentPre * 0.75;
+
+        Toast.makeText(MainActivity.this, "¥" + poundAmt.toString(), Toast.LENGTH_SHORT).show();
+
+
+        Log.i("amount", dollarAmountTextField.getText().toString());
     }
 
 
