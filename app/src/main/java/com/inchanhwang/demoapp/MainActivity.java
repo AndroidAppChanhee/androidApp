@@ -22,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-    double CurrentPre = 0;
-    double poundCur = 0;
+
     public void convert(View view) {
 
         EditText dollarAmountTextField = (EditText) findViewById(R.id.dollarAmt);
 
-        CurrentPre = Double.parseDouble(dollarAmountTextField.toString());
+        Double CurrentPre = Double.parseDouble(dollarAmountTextField.getText().toString());
 
         Double poundAmt = CurrentPre * 0.75;
 
